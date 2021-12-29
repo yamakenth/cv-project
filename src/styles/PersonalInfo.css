@@ -1,0 +1,22 @@
+.personal-info {
+  margin-bottom: 20px;
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.contacts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+#pipe {
+  font-weight: 900;
+}
