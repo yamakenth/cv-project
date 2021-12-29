@@ -10,9 +10,12 @@ class PersonalInfo extends React.Component {
           <h1 className='lname'>Yamada</h1>
         </div>
         <div className='contacts'>
-          <p className='location'>Bagnkok, Thailand |</p>
-          <p className='email'>contactme@gmail.com |</p>
-          <p className='phone-number'>(123)-567-8910 |</p>
+          <p className='location'>Bagnkok, Thailand</p>
+          <p id='pipe'>||</p>
+          <p className='email'>contactme@gmail.com</p>
+          <p id='pipe'>||</p>
+          <p className='phone-number'>(123)-567-8910</p>
+          <p id='pipe'>||</p>
           <p className='link'>
             <a 
               href='https://www.youtube.com/watch?v=UqTTSo1wdIY&ab_channel=F1AudioBook' 
