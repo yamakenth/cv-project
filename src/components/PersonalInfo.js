@@ -10,7 +10,7 @@ class PersonalInfo extends React.Component {
           <h1 className='lname'>Yamada</h1>
         </div>
         <div className='contacts'>
-          <p className='location'>Bagnkok, Thailand</p>
+          <p className='location'>Bangkok, Thailand</p>
           <p id='pipe'>||</p>
           <p className='email'>contactme@gmail.com</p>
           <p id='pipe'>||</p>
