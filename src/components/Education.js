@@ -6,9 +6,7 @@ class Education extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      style: {
-        editBtn: { display: 'none' }
-      },
+      editBtn: { display: 'none' },
       data: {
         education: {
           id: uniqid(),
@@ -45,17 +43,13 @@ class Education extends React.Component {
 
   showEditBtn = () => {
     this.setState({
-      style: {
-        editBtn: { display: 'block' }
-      }
+      editBtn: { display: 'block' }
     });
   }
   
   hideEditBtn = () => {
     this.setState({
-      style: {
-        editBtn: { display: 'none' }
-      }
+      editBtn: { display: 'none' }
     });
   }
 
@@ -66,7 +60,7 @@ class Education extends React.Component {
         onMouseEnter={this.showEditBtn}
         onMouseLeave={this.hideEditBtn}
       >
-        <EditButton editBtnStyle={this.state.style.editBtn} />
+        <EditButton editBtnStyle={this.state.editBtn} />
         <h3>EDUCATION</h3>
         {this.state.data.educations.map((education) => {
           return (
