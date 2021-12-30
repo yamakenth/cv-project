@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
+  font-size: 24px;
 }
 
 .contacts {
@@ -11,8 +12,19 @@
   align-items: center;
   gap: 6px;
   margin-bottom: 18px;
+  font-size: 16px;
+}
+
+.description {
+  font-size: 16px;
 }
 
 #pipe {
   font-weight: 900;
+}
+
+input, 
+textarea {
+  border: none;
+  resize: none;
 }

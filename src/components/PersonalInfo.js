@@ -1,14 +1,15 @@
 import React from 'react';
 import '../styles/PersonalInfo.css';
-import EditButton from './EditButton';
-import EditForm from './EditForm';
+import PersonalInfoDisplay from './PersonalInfoDisplay';
+import PersonalInfoEdit from './PersonalInfoEdit';
 
 class PersonalInfo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      editBtn: { display: 'none' },
-      editForm: { display: 'none' },
+      editBtnStyle: { display: 'none' },
+      editFormStyle: { display: 'none' },
+      displayFormStyle: { display: 'block' },
       data: {
         fname: 'Ken',
         lname: 'Yamada',
@@ -19,65 +20,52 @@ class PersonalInfo extends React.Component {
           href: 'https://www.youtube.com/watch?v=UqTTSo1wdIY&ab_channel=F1AudioBook',
           text: 'www.myportfolio.com'
         },
-        descritption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
       }
     }
   }
 
   showEditBtn = () => {
     this.setState({
-      editBtn: { display: 'block' }
+      editBtnStyle: { display: 'block' }
     });
   }
   
   hideEditBtn = () => {
     this.setState({
-      editBtn: { display: 'none' }
+      editBtnStyle: { display: 'none' }
     });
   }
 
   showEditForm = () => {
     this.setState({
-      editForm: { display: 'flex' }
+      editFormStyle: { display: 'block' },
+      displayFormStyle: { display: 'none' }
     });
   }
   
   hideEditForm = () => {
     this.setState({
-      editForm: { display: 'none' }
+      editFormStyle: { display: 'none' },
+      displayFormStyle: { display: 'block' }
     });
   }
 
   render() {
     return (
-      <div 
-        className='personal-info section' 
-        onMouseEnter={this.showEditBtn}
-        onMouseLeave={this.hideEditBtn}
-      >
-        <EditButton editBtnStyle={this.state.editBtn} showEditForm={this.showEditForm}/>
-        <div className='name'>
-          <h1 className='fname'>{this.state.data.fname}</h1>
-          <h1 className='lname'>{this.state.data.lname}</h1>
-        </div>
-        <div className='contacts'>
-          <p className='location'>{this.state.data.location}</p>
-          <p id='pipe'>||</p>
-          <p className='email'>{this.state.data.email}</p>
-          <p id='pipe'>||</p>
-          <p className='phone-number'>{this.state.data.phoneNumber}</p>
-          <p id='pipe'>||</p>
-          <p className='link'>
-            <a href= {this.state.data.link.href} target='_blank' rel='noreferrer'>
-              {this.state.data.link.text}
-            </a>
-          </p>
-        </div>
-        <div className='description'>{this.state.data.descritption}</div>
-        <EditForm 
-          editFormStyle={this.state.editForm} 
-          hideEditForm={this.hideEditForm} 
-          formName='Personal Information'
+      <div className='personal-info section'>
+        <PersonalInfoDisplay 
+          data={this.state.data}
+          editBtnStyle={this.state.editBtnStyle}
+          displayFormStyle={this.state.displayFormStyle}
+          showEditBtn={this.showEditBtn}
+          hideEditBtn={this.hideEditBtn}
+          showEditForm={this.showEditForm}
+          />
+        <PersonalInfoEdit 
+          data={this.state.data}
+          editFormStyle={this.state.editFormStyle}
+          hideEditForm={this.hideEditForm}
         />
       </div>
     );
