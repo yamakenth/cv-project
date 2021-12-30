@@ -6,6 +6,9 @@ class PersonalInfo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      style: {
+        editBtn: { display: 'none' }
+      },
       data: {
         fname: 'Ken',
         lname: 'Yamada',
@@ -21,10 +24,30 @@ class PersonalInfo extends React.Component {
     }
   }
 
+  showEditBtn = () => {
+    this.setState({
+      style: {
+        editBtn: { display: 'block' }
+      }
+    });
+  }
+  
+  hideEditBtn = () => {
+    this.setState({
+      style: {
+        editBtn: { display: 'none' }
+      }
+    });
+  }
+
   render() {
     return (
-      <div className='personal-info section'>
-        <EditButton />
+      <div 
+        className='personal-info section' 
+        onMouseEnter={this.showEditBtn}
+        onMouseLeave={this.hideEditBtn}
+      >
+        <EditButton editBtnStyle={this.state.style.editBtn} />
         <div className='name'>
           <h1 className='fname'>{this.state.data.fname}</h1>
           <h1 className='lname'>{this.state.data.lname}</h1>

@@ -2,10 +2,39 @@ import React from 'react';
 import EditButton from './EditButton';
 
 class Education extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      style: {
+        editBtn: { display: 'none' }
+      }
+    }
+  }
+
+  showEditBtn = () => {
+    this.setState({
+      style: {
+        editBtn: { display: 'block' }
+      }
+    });
+  }
+  
+  hideEditBtn = () => {
+    this.setState({
+      style: {
+        editBtn: { display: 'none' }
+      }
+    });
+  }
+
   render() {
     return(
-      <div className='education section'>
-        <EditButton />
+      <div 
+        className='education section'
+        onMouseEnter={this.showEditBtn}
+        onMouseLeave={this.hideEditBtn}
+      >
+        <EditButton editBtnStyle={this.state.style.editBtn} />
         <h3>EDUCATION</h3>
         <div className='education one item'>
           <div className='row one'>
