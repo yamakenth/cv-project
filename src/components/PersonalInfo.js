@@ -68,7 +68,7 @@ class PersonalInfo extends React.Component {
           </p>
         </div>
         <div className='description'>{this.state.data.descritption}</div>
-        <EditForm editFormStyle={this.state.editForm}/>
+        <EditForm editFormStyle={this.state.editForm} formName='Personal Information'/>
       </div>
     );
   }
