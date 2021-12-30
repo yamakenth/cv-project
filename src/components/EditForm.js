@@ -8,7 +8,7 @@ class EditForm extends React.Component {
         <h2>{this.props.formName}</h2>
         <div className='buttons'>
           <button type='submit' id='submit'>Confirm</button>
-          <button type='button' id='cancel'>Cancel</button>
+          <button type='button' id='cancel' onClick={this.props.hideEditForm}>Cancel</button>
         </div>
       </form>
     );

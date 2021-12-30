@@ -41,6 +41,12 @@ class PersonalInfo extends React.Component {
       editForm: { display: 'flex' }
     });
   }
+  
+  hideEditForm = () => {
+    this.setState({
+      editForm: { display: 'none' }
+    });
+  }
 
   render() {
     return (
@@ -68,7 +74,11 @@ class PersonalInfo extends React.Component {
           </p>
         </div>
         <div className='description'>{this.state.data.descritption}</div>
-        <EditForm editFormStyle={this.state.editForm} formName='Personal Information'/>
+        <EditForm 
+          editFormStyle={this.state.editForm} 
+          hideEditForm={this.hideEditForm} 
+          formName='Personal Information'
+        />
       </div>
     );
   }
