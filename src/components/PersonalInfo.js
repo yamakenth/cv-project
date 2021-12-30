@@ -1,14 +1,14 @@
 import React from 'react';
 import '../styles/PersonalInfo.css';
 import EditButton from './EditButton';
+import EditForm from './EditForm';
 
 class PersonalInfo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      style: {
-        editBtn: { display: 'none' }
-      },
+      editBtn: { display: 'none' },
+      editForm: { display: 'none' },
       data: {
         fname: 'Ken',
         lname: 'Yamada',
@@ -26,17 +26,19 @@ class PersonalInfo extends React.Component {
 
   showEditBtn = () => {
     this.setState({
-      style: {
-        editBtn: { display: 'block' }
-      }
+      editBtn: { display: 'block' }
     });
   }
   
   hideEditBtn = () => {
     this.setState({
-      style: {
-        editBtn: { display: 'none' }
-      }
+      editBtn: { display: 'none' }
+    });
+  }
+
+  showEditForm = () => {
+    this.setState({
+      editForm: { display: 'flex' }
     });
   }
 
@@ -47,7 +49,7 @@ class PersonalInfo extends React.Component {
         onMouseEnter={this.showEditBtn}
         onMouseLeave={this.hideEditBtn}
       >
-        <EditButton editBtnStyle={this.state.style.editBtn} />
+        <EditButton editBtnStyle={this.state.editBtn} showEditForm={this.showEditForm}/>
         <div className='name'>
           <h1 className='fname'>{this.state.data.fname}</h1>
           <h1 className='lname'>{this.state.data.lname}</h1>
@@ -66,6 +68,7 @@ class PersonalInfo extends React.Component {
           </p>
         </div>
         <div className='description'>{this.state.data.descritption}</div>
+        <EditForm editFormStyle={this.state.editForm}/>
       </div>
     );
   }
