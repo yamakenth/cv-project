@@ -4,9 +4,9 @@ import '../styles/WorkExp.css';
 class WorkExp extends React.Component {
   render() {
     return (
-      <div className='work-experience'>
+      <div className='work-experience section'>
         <h3>WORK EXPERIENCE</h3>
-        <div className='work one'>
+        <div className='work one item'>
           <div className='row one'>
             <p>An E-commerce Company</p>
             <p>Bangkok, Thailand</p>
@@ -27,7 +27,7 @@ class WorkExp extends React.Component {
             </li>
           </ul>
         </div>
-        <div className='work two'>
+        <div className='work two item'>
           <div className='row one'>
             <p>A Manufacturing Company</p>
             <p>Chonburi, Thailand</p>
@@ -48,7 +48,7 @@ class WorkExp extends React.Component {
             </li>
           </ul>
         </div>
-        <div className='work three'>
+        <div className='work three item'>
           <div className='row one'>
             <p>A Banking Company</p>
             <p>Bangkok, Thailand</p>

@@ -22,7 +22,7 @@ class PersonalInfo extends React.Component {
 
   render() {
     return (
-      <div className='personal-info'>
+      <div className='personal-info section'>
         <div className='name'>
           <h1 className='fname'>{this.state.data.fname}</h1>
           <h1 className='lname'>{this.state.data.lname}</h1>

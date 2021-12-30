@@ -5,7 +5,6 @@
 }
 
 #root {
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -16,6 +15,14 @@
   margin: 50px;
   padding: 20px 40px;
   width: 800px;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.item {
+  padding-bottom: 10px;
 }
 
 h3 {
