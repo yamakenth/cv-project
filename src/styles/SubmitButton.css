@@ -1,0 +1,25 @@
+.buttons {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+#submit {
+  background-color: #04AA6D;
+  color: #fff;
+}
+
+#submit:hover {
+  background-color: #3acc96;
+}
+
+#cancel {
+  background-color: #fc362c;
+  color: #fff;
+}
+
+#cancel:hover {
+  background-color: #fc726a;
+}
