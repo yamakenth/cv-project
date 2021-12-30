@@ -6,19 +6,19 @@ class PersonalInfo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      style: { display: 'none' }
+      buttonStyle: { display: 'none' }
     }
   }
 
   showEditButton = () => {
     this.setState({
-      style: { display: 'flex' }
+      buttonStyle: { display: 'flex' }
     })
   }
 
   hideEditButton = () => {
     this.setState({
-      style: { display: 'none' }
+      buttonStyle: { display: 'none' }
     })
   }
   
@@ -29,7 +29,7 @@ class PersonalInfo extends React.Component {
         onMouseEnter={this.showEditButton} 
         onMouseLeave={this.hideEditButton}
       >
-        <EditButton style={this.state.style}/>
+        <EditButton buttonStyle={this.state.buttonStyle} showEditForm={this.props.showEditForm}/>
         <div className='name'>
           <h1 className='fname'>Ken</h1>
           <h1 className='lname'>Yamada</h1>
