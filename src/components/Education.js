@@ -1,9 +1,11 @@
 import React from 'react';
+import EditButton from './EditButton';
 
 class Education extends React.Component {
   render() {
     return(
       <div className='education section'>
+        <EditButton />
         <h3>EDUCATION</h3>
         <div className='education one item'>
           <div className='row one'>

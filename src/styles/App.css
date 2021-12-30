@@ -19,6 +19,11 @@
 
 .section {
   margin-bottom: 20px;
+  position: relative;
+}
+
+.section:hover {
+  transform: scale(1.05);
 }
 
 .item {
@@ -48,4 +53,15 @@ h3 {
 
 ul {
   list-style-position: inside;
+}
+
+button {
+  padding: 4px 12px;
+  border: none;
+  border-radius: 6px;
+}
+
+button:hover {
+  transform: scale(1.05);
+  cursor: pointer;
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/PersonalInfo.css';
+import EditButton from './EditButton';
 
 class PersonalInfo extends React.Component {
   constructor(props) {
@@ -23,6 +24,7 @@ class PersonalInfo extends React.Component {
   render() {
     return (
       <div className='personal-info section'>
+        <EditButton />
         <div className='name'>
           <h1 className='fname'>{this.state.data.fname}</h1>
           <h1 className='lname'>{this.state.data.lname}</h1>
