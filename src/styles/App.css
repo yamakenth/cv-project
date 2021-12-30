@@ -10,3 +10,35 @@
   justify-content: center;
   align-items: flex-start;
 }
+
+.resume-body {
+  border: 1px solid #000;
+  margin: 50px;
+  padding: 20px 40px;
+  width: 800px;
+}
+
+h3 {
+  width: 100%;
+  border-bottom: 1px solid #000;
+  margin-bottom: 10px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.row.one {
+  font-weight: 900;
+}
+
+.row.two {
+  font-style: italic;
+  padding-bottom: 6px;
+}
+
+ul {
+  list-style-position: inside;
+}

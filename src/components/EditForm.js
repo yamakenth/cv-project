@@ -9,31 +9,31 @@ class EditForm extends React.Component {
           <h2>Personal Information</h2>
             {/*  */}
             <div>
-              <div class='fname-input-container'>
+              <div className='fname-input-container'>
                 <label htmlFor="fname-input">First Name:</label>
                 <input type="text" id="fname-input" />
               </div>
-              <div class='lname-input-container'>
+              <div className='lname-input-container'>
                 <label htmlFor="lname-input">Last Name:</label>
                 <input type="text" id="lname-input" />
               </div>
-              <div class='location-input-container'>
+              <div className='location-input-container'>
                 <label htmlFor="location-input">Location:</label>
                 <input type="text" id="location-input" />
               </div>
-              <div class='email-input-container'>
+              <div className='email-input-container'>
                 <label htmlFor="email-input">Email:</label>
                 <input type="text" id="email-input" />
               </div>
-              <div class='phone-number-input-container'>
+              <div className='phone-number-input-container'>
                 <label htmlFor="phone-number-input">Phone Number:</label>
                 <input type="text" id="phone-number-input" />
               </div>
-              <div class='link-input-container'>
+              <div className='link-input-container'>
                 <label htmlFor="link-input">Link:</label>
                 <input type="text" id="link-input" />
               </div>
-              <div class='description-input-container'>
+              <div className='description-input-container'>
                 <label htmlFor="description-input">Description:</label>
                 <textarea id="description-input" rows='4' cols='50' />
               </div>

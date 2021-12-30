@@ -1,8 +1,6 @@
 import React from 'react';
-import '../styles/ResumeBody.css';
 import PersonalInfo from './PersonalInfo';
 import WorkExp from './WorkExp';
-import EditForm from './EditForm';
 
 class ResumeBody extends React.Component {
   constructor(props) {
@@ -23,7 +21,6 @@ class ResumeBody extends React.Component {
       <div className='resume-body'>
         <PersonalInfo showEditForm={this.showEditForm} />
         <WorkExp />
-        <EditForm formStyle={this.state.formStyle} />
       </div>
     );
   }
