@@ -1,4 +1,5 @@
 import React from 'react';
+import uniqid from 'uniqid';
 import EditButton from './EditButton';
 
 class Education extends React.Component {
@@ -7,6 +8,37 @@ class Education extends React.Component {
     this.state = {
       style: {
         editBtn: { display: 'none' }
+      },
+      data: {
+        education: {
+          id: uniqid(),
+          school: '',
+          location: '',
+          major: '',
+          date: '',
+          desc_1: '',
+          desc_2: '',
+        },
+        educations: [
+          {
+            id: uniqid(),
+            school: 'University of Something, College of Engineering',
+            location: 'Seattle, Washington',
+            major: 'Industrial & Systems Engineering',
+            date: 'June 2020',
+            desc_1: 'Major GPA: 3.77/4.00, Cumulative GPA: 3.59/4.00',
+            desc_2: 'Dean\'s List (6 semesters)',
+          },
+          {
+            id: uniqid(),
+            school: 'Somestate College',
+            location: 'City, State',
+            major: 'Applied Computational Mathematics',
+            date: 'July 2018',
+            desc_1: 'Major GPA: 3.99/4.00, Cumulative GPA: 3.78/4.00',
+            desc_2: 'Dean\'s List(8 semesters)',
+          }
+        ]
       }
     }
   }
@@ -36,34 +68,24 @@ class Education extends React.Component {
       >
         <EditButton editBtnStyle={this.state.style.editBtn} />
         <h3>EDUCATION</h3>
-        <div className='education one item'>
-          <div className='row one'>
-            <div>University of Something, College of Engineering</div>
-            <div>Somewhere, Country</div>
-          </div>
-          <div className='row two'>
-            <div>Industrial & Systems Engineering</div>
-            <div>June 2020</div>
-          </div>
-          <ul className='description'>
-            <li>Major GPA: 3.77/4.00, Cumulative GPA: 3.59/4.00</li>
-            <li>Dean's List (6 semesters)</li>
-          </ul>
-        </div>
-        <div className='education two item'>
-          <div className='row one'>
-            <div>Somestate College</div>
-            <div>Somewhere, Country</div>
-          </div>
-          <div className='row two'>
-            <div>Applied Computational Mathematics</div>
-            <div>July 2018</div>
-          </div>
-          <ul className='description'>
-            <li>Major GPA: 3.99/4.00, Cumulative GPA: 3.78/4.00</li>
-            <li>Dean's List (8 semesters)</li>
-          </ul>
-        </div>
+        {this.state.data.educations.map((education) => {
+          return (
+            <div key={education.id} className='education item'>
+              <div className='row one'>
+                <div>{education.school}</div>
+                <div>{education.location}</div>
+              </div>
+              <div className='row two'>
+                <div>{education.major}</div>
+                <div>{education.date}</div>
+              </div>
+              <ul className='description'>
+                <li>{education.desc_1}</li>
+                <li>{education.desc_2}</li>
+              </ul>
+            </div>
+          );
+        })}
       </div>
     );
   }
