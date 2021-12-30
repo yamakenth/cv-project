@@ -1,5 +1,10 @@
 .personal-info {
   margin-bottom: 20px;
+  position: relative; 
+}
+
+.personal-info:hover {
+  transform: scale(1.05);
 }
 
 .name {

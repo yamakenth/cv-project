@@ -1,10 +1,35 @@
 import React from 'react';
 import '../styles/PersonalInfo.css';
+import EditButton from './EditButton';
 
 class PersonalInfo extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      style: { display: 'none' }
+    }
+  }
+
+  showEditButton = () => {
+    this.setState({
+      style: { display: 'flex' }
+    })
+  }
+
+  hideEditButton = () => {
+    this.setState({
+      style: { display: 'none' }
+    })
+  }
+  
   render() {
     return (
-      <div className='personal-info'>
+      <div 
+        className='personal-info' 
+        onMouseEnter={this.showEditButton} 
+        onMouseLeave={this.hideEditButton}
+      >
+        <EditButton style={this.state.style}/>
         <div className='name'>
           <h1 className='fname'>Ken</h1>
           <h1 className='lname'>Yamada</h1>
