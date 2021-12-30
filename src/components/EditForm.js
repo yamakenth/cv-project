@@ -7,6 +7,7 @@ class EditForm extends React.Component {
       <div style={this.props.formStyle}>
         <form className='edit-form'>
           <h2>This is a form</h2>
+          <button type='submit'>Edit</button>
         </form>
         <div id='overlay'></div>
       </div>
