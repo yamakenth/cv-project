@@ -51,6 +51,142 @@ class PersonalInfo extends React.Component {
     });
   }
 
+  handleFNameChange = (e) => {
+    this.setState({
+      data: {
+        fname: e.target.value,
+        lname: this.state.data.lname,
+        location: this.state.data.location,
+        email: this.state.data.email,
+        phoneNumber: this.state.data.phoneNumber,
+        link: {
+          href: this.state.data.link.href,
+          text: this.state.data.link.text,
+        },
+        description: this.state.data.description
+      }
+    });
+  }
+  
+  handleLNameChange = (e) => {
+    this.setState({
+      data: {
+        fname: this.state.data.fname,
+        lname: e.target.value,
+        location: this.state.data.location,
+        email: this.state.data.email,
+        phoneNumber: this.state.data.phoneNumber,
+        link: {
+          href: this.state.data.link.href,
+          text: this.state.data.link.text,
+        },
+        description: this.state.data.description
+      }
+    });
+  }
+
+  handleLocationChange = (e) => {
+    this.setState({
+      data: {
+        fname: this.state.data.fname,
+        lname: this.state.data.lname,
+        location: e.target.value,
+        email: this.state.data.email,
+        phoneNumber: this.state.data.phoneNumber,
+        link: {
+          href: this.state.data.link.href,
+          text: this.state.data.link.text,
+        },
+        description: this.state.data.description
+      }
+    });
+  }
+
+  handleEmailChange = (e) => {
+    this.setState({
+      data: {
+        fname: this.state.data.fname,
+        lname: this.state.data.lname,
+        location: this.state.data.location,
+        email: e.target.value,
+        phoneNumber: this.state.data.phoneNumber,
+        link: {
+          href: this.state.data.link.href,
+          text: this.state.data.link.text,
+        },
+        description: this.state.data.description
+      }
+    });
+  }
+
+  handlePhoneNumberChange = (e) => {
+    this.setState({
+      data: {
+        fname: this.state.data.fname,
+        lname: this.state.data.lname,
+        location: this.state.data.location,
+        email: this.state.data.email,
+        phoneNumber: e.target.value,
+        link: {
+          href: this.state.data.link.href,
+          text: this.state.data.link.text,
+        },
+        description: this.state.data.description
+      }
+    });
+  }
+
+  handleLinkTextChange = (e) => {
+    this.setState({
+      data: {
+        fname: this.state.data.fname,
+        lname: this.state.data.lname,
+        location: this.state.data.location,
+        email: this.state.data.email,
+        phoneNumber: this.state.data.phoneNumber,
+        link: {
+          href: this.state.data.link.href,
+          text: e.target.value,
+        },
+        description: this.state.data.description
+      }
+    });
+  }
+
+  handleLinkHrefChange = (e) => {
+    this.setState({
+      data: {
+        fname: this.state.data.fname,
+        lname: this.state.data.lname,
+        location: this.state.data.location,
+        email: this.state.data.email,
+        phoneNumber: this.state.data.phoneNumber,
+        link: {
+          href: e.target.value,
+          text: this.state.data.link.text,
+        },
+        description: this.state.data.description
+      }
+    });
+  }
+
+  handleDescriptionChange = (e) => {
+    this.setState({
+      data: {
+        fname: this.state.data.fname,
+        lname: this.state.data.lname,
+        location: this.state.data.location,
+        email: this.state.data.email,
+        phoneNumber: this.state.data.phoneNumber,
+        link: {
+          href: this.state.data.link.href,
+          text: this.state.data.link.text,
+        },
+        description: e.target.value
+      }
+    });
+  }
+
   render() {
     return (
       <div className='personal-info section'>
@@ -66,6 +202,14 @@ class PersonalInfo extends React.Component {
           data={this.state.data}
           editFormStyle={this.state.editFormStyle}
           hideEditForm={this.hideEditForm}
+          handleFNameChange={this.handleFNameChange}
+          handleLNameChange={this.handleLNameChange}
+          handleLocationChange={this.handleLocationChange}
+          handleEmailChange={this.handleEmailChange}
+          handlePhoneNumberChange={this.handlePhoneNumberChange}
+          handleLinkTextChange={this.handleLinkTextChange}
+          handleLinkHrefChange={this.handleLinkHrefChange}
+          handleDescriptionChange={this.handleDescriptionChange}
         />
       </div>
     );
