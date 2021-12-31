@@ -1,4 +1,5 @@
 import React from 'react';
+import DeleteButton from './DeleteButton';
 import SubmitButton from './SubmitButton';
 
 export default class WorkExpEdit extends React.Component {
@@ -9,6 +10,7 @@ export default class WorkExpEdit extends React.Component {
         {this.props.jobs.map((job) => {
           return (
             <div key={job.id} className='edit-each-item'>
+              <DeleteButton handleDelete={() => this.props.handleDelete(job)}/>
               <div className='company-input'>
                 <label htmlFor="compnay-name-input">
                   Company Name:

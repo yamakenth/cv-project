@@ -153,6 +153,12 @@ export default class WorkExp extends React.Component {
     });
   }
   
+  handleDelete = (element) => {
+    this.setState({
+      jobs: this.state.jobs.filter(item => item.id !== element.id)
+    });
+  }
+
   render() {
     return (
       <div className='work-experience section'>
@@ -178,6 +184,7 @@ export default class WorkExp extends React.Component {
           handleDesc2Change={this.handleDesc2Change}
           handleDesc3Change={this.handleDesc3Change}
           handleSubmit={this.handleSubmit}
+          handleDelete={this.handleDelete}
         />
       </div>
     );
