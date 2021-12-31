@@ -1,0 +1,14 @@
+.delete-button {
+  position: absolute; 
+  top: 12px; 
+  right: 12px;
+  background: none;
+  padding: 0;
+  width: 20px;
+}
+
+.delete-button > img {
+  height: 20px;
+  width: auto;
+  pointer-events: none;
+}
