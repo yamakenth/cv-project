@@ -39,18 +39,7 @@ export default class PersonalInfo extends React.Component {
   showEditForm = () => {
     this.setState({
       editFormStyle: { display: 'flex' },
-      displayFormStyle: { display: 'none' },
-      
-      fname: this.state.fname,
-      lname: this.state.lname,
-      location: this.state.location,
-      email: this.state.email,
-      phoneNumber: this.state.phoneNumber,
-      link: {
-        href: this.state.link.href,
-        text: this.state.link.text,
-      },
-      description: this.state.description
+      displayFormStyle: { display: 'none' }
     });
   }
   
@@ -63,31 +52,31 @@ export default class PersonalInfo extends React.Component {
 
   handleFNameChange = (e) => {
     this.setState({
-      fname: e.target.value,
+      fname: e.target.value
     });
   }
   
   handleLNameChange = (e) => {
     this.setState({
-      lname: e.target.value,
+      lname: e.target.value
     });
   }
 
   handleLocationChange = (e) => {
     this.setState({
-      location: e.target.value,
+      location: e.target.value
     });
   }
 
   handleEmailChange = (e) => {
     this.setState({
-      email: e.target.value,
+      email: e.target.value
     });
   }
 
   handlePhoneNumberChange = (e) => {
     this.setState({
-      phoneNumber: e.target.value,
+      phoneNumber: e.target.value
     });
   }
 
