@@ -53,16 +53,17 @@ class PersonalInfo extends React.Component {
     this.setState({
       editFormStyle: { display: 'flex' },
       displayFormStyle: { display: 'none' },
-      fname: this.state.fname,
-      lname: this.state.lname,
-      location: this.state.location,
-      email: this.state.email,
-      phoneNumber: this.state.phoneNumber,
+      
+      fname: this.state.data.fname,
+      lname: this.state.data.lname,
+      location: this.state.data.location,
+      email: this.state.data.email,
+      phoneNumber: this.state.data.phoneNumber,
       link: {
-        href: this.state.link.href,
-        text: this.state.link.text,
+        href: this.state.data.link.href,
+        text: this.state.data.link.text,
       },
-      description: this.state.description
+      description: this.state.data.description
     });
   }
   
