@@ -79,14 +79,12 @@ export default class WorkExpEdit extends React.Component {
                   value={(this.props.desc_3) ? this.props.desc_3 : job.desc_3}
                 ></textarea>
               </div>
-              
             </div>
           );
         })}
-        <AddButton />
+        <AddButton handleAdd={this.props.handleAdd}/>
         <SubmitButton 
           hideEditForm={this.props.hideEditForm} 
-          handleSubmit={this.props.handleSubmit}
         />
       </form>
     );

@@ -137,25 +137,25 @@ export default class WorkExp extends React.Component {
       )
     });
   }
-
-  handleSubmit = () => {
-    this.hideEditForm();
-    
-    this.setState({
-      id: uniqid(),
-      company: '',
-      location: '',
-      position: '',
-      date: '',
-      desc_1: '',
-      desc_2: '',
-      desc_3: '',
-    });
-  }
   
   handleDelete = (element) => {
     this.setState({
       jobs: this.state.jobs.filter(item => item.id !== element.id)
+    });
+  }
+
+  handleAdd = () => {
+    this.setState({
+      jobs: this.state.jobs.concat({
+        id: this.state.id,
+        company: this.state.company,
+        location: this.state.location,
+        position: this.state.position,
+        date: this.state.date,
+        desc_1: this.state.desc_1,
+        desc_2: this.state.desc_2,
+        desc_3: this.state.desc_3,
+      })
     });
   }
 
@@ -183,8 +183,8 @@ export default class WorkExp extends React.Component {
           handleDesc1Change={this.handleDesc1Change}
           handleDesc2Change={this.handleDesc2Change}
           handleDesc3Change={this.handleDesc3Change}
-          handleSubmit={this.handleSubmit}
           handleDelete={this.handleDelete}
+          handleAdd={this.handleAdd}
         />
       </div>
     );
