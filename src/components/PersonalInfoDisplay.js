@@ -1,11 +1,8 @@
 import React from 'react';
 import EditButton from './EditButton';
 
-class PersonalInfoDisplay extends React.Component {
-  
+export default class PersonalInfoDisplay extends React.Component {
   render() {
-    const { fname, lname, location, email, phoneNumber, link, description} = this.props.data;
-    
     return(
       <div 
         className='personal-info display'
@@ -13,26 +10,29 @@ class PersonalInfoDisplay extends React.Component {
         onMouseLeave={this.props.hideEditBtn}
         style={this.props.displayFormStyle}
       >
-        <EditButton editBtnStyle={this.props.editBtnStyle} showEditForm={this.props.showEditForm}/>
+        <EditButton 
+          editBtnStyle={this.props.editBtnStyle} 
+          showEditForm={this.props.showEditForm}
+        />
         <div className='name'>
-          <h1>{fname}</h1>
-          <h1>{lname}</h1>
+          <h1>{this.props.fname}</h1>
+          <h1>{this.props.lname}</h1>
         </div>
         <div className='contacts'>
-          <p>{location}</p>
+          <p>{this.props.location}</p>
           <p id='pipe'>||</p>
-          <p>{email}</p>
+          <p>{this.props.email}</p>
           <p id='pipe'>||</p>
-          <p>{phoneNumber}</p>
+          <p>{this.props.phoneNumber}</p>
           <p id='pipe'>||</p>
           <p>
-            <a href= {link.href} target='_blank' rel='noreferrer'>{link.text}</a>
+            <a href= {this.props.link.href} target='_blank' rel='noreferrer'>
+              {this.props.link.text}
+            </a>
           </p>
         </div>
-        <div className='description'>{description}</div>
+        <div className='description'>{this.props.description}</div>
       </div>
     );
   }
 }
-
-export default PersonalInfoDisplay;

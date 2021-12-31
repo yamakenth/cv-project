@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/EditButton.css';
 
-class EditButton extends React.Component {
+export default class EditButton extends React.Component {
   render() {
     return (
       <button 
@@ -14,5 +14,3 @@ class EditButton extends React.Component {
     )
   }
 }
-
-export default EditButton;

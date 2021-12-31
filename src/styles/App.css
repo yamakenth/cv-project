@@ -9,6 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  background-color: #d3d3d3;
 }
 
 .resume-body {
@@ -16,6 +17,7 @@
   margin: 50px;
   padding: 20px 40px;
   width: 800px;
+  background-color: #fff;
 }
 
 .section {
@@ -24,7 +26,7 @@
 }
 
 .section:hover {
-  transform: scale(1.05);
+  transform: scale(1.05, 1);
 }
 
 .item {
@@ -75,4 +77,28 @@ textarea {
 
 input {
   padding: 0 4px;
+}
+
+.edit {
+  border: 1px solid #000;
+  border-radius: 12px;
+  background-color: #fafad2;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.edit-each-item {
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
 }
