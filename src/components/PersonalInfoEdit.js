@@ -14,6 +14,7 @@ export default class PersonalInfoEdit extends React.Component {
               id="fname-input" 
               onChange={this.props.handleFNameChange} 
               value={this.props.fname}
+              required
             />
           </label>
           <label htmlFor="lname-input">
@@ -86,7 +87,6 @@ export default class PersonalInfoEdit extends React.Component {
         </div>
         <SubmitButton 
           hideEditForm={this.props.hideEditForm} 
-          handleSubmit={this.props.handleSubmit}
         />
       </form>
     );

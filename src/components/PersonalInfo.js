@@ -104,23 +104,6 @@ export default class PersonalInfo extends React.Component {
     });
   }
 
-  handleSubmit = () => {
-    this.hideEditForm();
-    
-    this.setState({
-      fname: this.state.fname,
-      lname: this.state.lname,
-      location: this.state.location,
-      email: this.state.email,
-      phoneNumber: this.state.phoneNumber,
-      link: {
-        href: this.state.link.href,
-        text: this.state.link.text,
-      },
-      description: this.state.description
-    });
-  }
-
   render() {
     return (
       <div className='personal-info section'>
@@ -158,7 +141,6 @@ export default class PersonalInfo extends React.Component {
           handleLinkTextChange={this.handleLinkTextChange}
           handleLinkHrefChange={this.handleLinkHrefChange}
           handleDescriptionChange={this.handleDescriptionChange}
-          handleSubmit={this.handleSubmit}
         />
       </div>
     );
