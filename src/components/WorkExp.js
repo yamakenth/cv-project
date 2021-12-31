@@ -1,8 +1,10 @@
 import React from 'react';
+import '../styles/WorkExp.css';
 import uniqid from 'uniqid';
 import WorkExpDisplay from './WorkExpDisplay';
+import WorkExpEdit from './WorkExpEdit';
 
-class WorkExp extends React.Component {
+export default class WorkExp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,7 +21,7 @@ class WorkExp extends React.Component {
       desc_2: '',
       desc_3: '',
 
-      data: [
+      jobs: [
         {
           id: uniqid(),
           company: 'An E-commerce Company',
@@ -70,15 +72,6 @@ class WorkExp extends React.Component {
     this.setState({
       editFormStyle: { display: 'flex' },
       displayFormStyle: { display: 'none' },
-
-      id: this.state.data.id,
-      company: this.state.data.company,
-      location: this.state.data.location,
-      position: this.state.data.position,
-      date: this.state.data.date,
-      desc_1: this.state.data.desc_1,
-      desc_2: this.state.data.desc_2,
-      desc_3: this.state.data.desc_3,
     });
   }
   
@@ -88,6 +81,77 @@ class WorkExp extends React.Component {
       displayFormStyle: { display: 'block' }
     });
   }
+
+  handleCompanyChange = (e, element) => {
+    this.setState({
+      jobs: this.state.jobs.map((item) => 
+        (item.id === element.id) ? { ...item, company: e.target.value } : item
+      )
+    });
+  }
+
+  handleLocationChange = (e, element) => {
+    this.setState({
+      jobs: this.state.jobs.map((item) => 
+        (item.id === element.id) ? { ...item, location: e.target.value } : item
+      )
+    });
+  }
+
+  handlePositionChange = (e, element) => {
+    this.setState({
+      jobs: this.state.jobs.map((item) => 
+        (item.id === element.id) ? { ...item, position: e.target.value } : item
+      )
+    });
+  }
+
+  handleDateChange = (e, element) => {
+    this.setState({
+      jobs: this.state.jobs.map((item) => 
+        (item.id === element.id) ? { ...item, date: e.target.value } : item
+      )
+    });
+  }
+
+  handleDesc1Change = (e, element) => {
+    this.setState({
+      jobs: this.state.jobs.map((item) => 
+        (item.id === element.id) ? { ...item, desc_1: e.target.value } : item
+      )
+    });
+  }
+
+  handleDesc2Change = (e, element) => {
+    this.setState({
+      jobs: this.state.jobs.map((item) => 
+        (item.id === element.id) ? { ...item, desc_2: e.target.value } : item
+      )
+    });
+  }
+
+  handleDesc3Change = (e, element) => {
+    this.setState({
+      jobs: this.state.jobs.map((item) => 
+        (item.id === element.id) ? { ...item, desc_3: e.target.value } : item
+      )
+    });
+  }
+
+  handleSubmit = () => {
+    this.hideEditForm();
+    
+    this.setState({
+      id: uniqid(),
+      company: '',
+      location: '',
+      position: '',
+      date: '',
+      desc_1: '',
+      desc_2: '',
+      desc_3: '',
+    });
+  }
   
   render() {
     return (
@@ -95,14 +159,27 @@ class WorkExp extends React.Component {
         <WorkExpDisplay 
           editBtnStyle={this.state.editBtnStyle}
           displayFormStyle={this.state.displayFormStyle}
+          jobs={this.state.jobs}
+          
           showEditBtn={this.showEditBtn}
           hideEditBtn={this.hideEditBtn}
           showEditForm={this.showEditForm}
-          data={this.state.data}
+        />
+        <WorkExpEdit
+          editFormStyle={this.state.editFormStyle}
+          jobs={this.state.jobs}
+
+          hideEditForm={this.hideEditForm}
+          handleCompanyChange={this.handleCompanyChange}
+          handleLocationChange={this.handleLocationChange}
+          handlePositionChange={this.handlePositionChange}
+          handleDateChange={this.handleDateChange}
+          handleDesc1Change={this.handleDesc1Change}
+          handleDesc2Change={this.handleDesc2Change}
+          handleDesc3Change={this.handleDesc3Change}
+          handleSubmit={this.handleSubmit}
         />
       </div>
     );
   }
 }
-
-export default WorkExp;

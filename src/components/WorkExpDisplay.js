@@ -1,7 +1,7 @@
 import React from 'react';
 import EditButton from './EditButton';
 
-class WorkExpDisplay extends React.Component {
+export default class WorkExpDisplay extends React.Component {
   render() {
     return (
       <div 
@@ -12,7 +12,7 @@ class WorkExpDisplay extends React.Component {
       >
         <EditButton editBtnStyle={this.props.editBtnStyle} showEditForm={this.props.showEditForm}/>
         <h3>WORK EXPERIENCE</h3>
-        {this.props.data.map((job) => {
+        {this.props.jobs.map((job) => {
           return (
             <div key={job.id} className='work item'>
               <div className='row one'>
@@ -35,5 +35,3 @@ class WorkExpDisplay extends React.Component {
     );
   }
 }
-
-export default WorkExpDisplay;
