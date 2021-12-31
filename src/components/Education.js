@@ -22,21 +22,21 @@ export default class Education extends React.Component {
       schools: [
         {
           id: uniqid(),
-          school: 'University of Something, College of Engineering',
-          location: 'Seattle, Washington',
-          major: 'Industrial & Systems Engineering',
-          date: 'June 2020',
-          desc_1: 'Major GPA: 3.77/4.00, Cumulative GPA: 3.59/4.00',
-          desc_2: 'Dean\'s List (6 semesters)',
+          school: 'University of Country',
+          location: 'Tokyo, Japan',
+          major: 'B.S. Applied Computational Mathematics',
+          date: 'July 2016',
+          desc_1: 'Major GPA: 3.95/4.00, Cumulative GPA: 3.78/4.00',
+          desc_2: 'Dean\'s List (8 semesters)',
         },
         {
           id: uniqid(),
-          school: 'Somestate College',
-          location: 'City, State',
-          major: 'Applied Computational Mathematics',
-          date: 'July 2018',
-          desc_1: 'Major GPA: 3.99/4.00, Cumulative GPA: 3.78/4.00',
-          desc_2: 'Dean\'s List(8 semesters)',
+          school: 'University of State, College of Engineering',
+          location: 'Seattle, Washington',
+          major: 'M.S. Industrial & Systems Engineering',
+          date: 'June 2018',
+          desc_1: 'Major GPA: 3.77/4.00, Cumulative GPA: 3.59/4.00',
+          desc_2: 'Dean\'s List (3 semesters)',
         }
       ]
     }

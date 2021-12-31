@@ -11,9 +11,9 @@ export default class PersonalInfo extends React.Component {
       editFormStyle: { display: 'none' },
       displayFormStyle: { display: 'block' },
       
-      fname: 'Ken',
-      lname: 'Yamada',
-      location: 'Bangkok, Thailand',
+      fname: 'James',
+      lname: 'Jones',
+      location: 'Seattle, Washington',
       email: 'contactme@gmail.com',
       phoneNumber: '(123)-567-8910',
       link: {
