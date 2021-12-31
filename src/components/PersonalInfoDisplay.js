@@ -2,9 +2,10 @@ import React from 'react';
 import EditButton from './EditButton';
 
 class PersonalInfoDisplay extends React.Component {
+  
   render() {
-    const { fname, lname, location, email, phoneNumber, link, description } = this.props.data;
-
+    const { fname, lname, location, email, phoneNumber, link, description} = this.props.data;
+    
     return(
       <div 
         className='personal-info display'

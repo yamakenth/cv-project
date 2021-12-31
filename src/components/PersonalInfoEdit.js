@@ -3,8 +3,8 @@ import EditForm from './SubmitButton';
 
 class PersonalInfoEdit extends React.Component {
   render() {
-    const { fname, lname, location, email, phoneNumber, link, description } = this.props.data;
-
+    const { fname, lname, location, email, phoneNumber, link, description} = this.props.data;
+    
     return(
       <form className='personal-info edit' style={this.props.editFormStyle}>
         <h2>Personal Information</h2>
@@ -15,7 +15,7 @@ class PersonalInfoEdit extends React.Component {
               type="text" 
               id="fname-input" 
               onChange={this.props.handleFNameChange} 
-              value={fname}
+              value={(this.props.fname) ? this.props.fname : fname}
             />
           </label>
           <label htmlFor="lname-input">
@@ -24,7 +24,7 @@ class PersonalInfoEdit extends React.Component {
               type="text" 
               id="lname-input" 
               onChange={this.props.handleLNameChange}
-              value={lname}
+              value={(this.props.lname) ? this.props.lname : lname}
             />
           </label>
         </div>
@@ -35,7 +35,7 @@ class PersonalInfoEdit extends React.Component {
               type="text" 
               id="location-input" 
               onChange={this.props.handleLocationChange}
-              value={location}
+              value={(this.props.location) ? this.props.location : location}
             />
           </label>
           <label htmlFor="email-input">
@@ -44,7 +44,7 @@ class PersonalInfoEdit extends React.Component {
               type="text" 
               id="email-input" 
               onChange={this.props.handleEmailChange}
-              value={email}
+              value={(this.props.email) ? this.props.email : email}
             />
           </label>
           <label htmlFor="phone-number-input">
@@ -53,7 +53,7 @@ class PersonalInfoEdit extends React.Component {
               type="text" 
               id="phone-number-input" 
               onChange={this.props.handlePhoneNumberChange}
-              value={phoneNumber}
+              value={(this.props.phoneNumber) ? this.props.phoneNumber : phoneNumber}
             />
           </label>
         </div>
@@ -64,7 +64,7 @@ class PersonalInfoEdit extends React.Component {
               type="text" 
               id="link-text-input" 
               onChange={this.props.handleLinkTextChange}
-              value={link.text}
+              value={(this.props.link.text) ? this.props.link.text : link.text}
             />
           </label>
           <label htmlFor="link-href-input">
@@ -73,7 +73,7 @@ class PersonalInfoEdit extends React.Component {
               type="text" 
               id="link-href-input" 
               onChange={this.props.handleLinkHrefChange}
-              value={link.href}
+              value={(this.props.link.href) ? this.props.link.href : link.href}
             />
           </label>
         </div>
@@ -83,7 +83,7 @@ class PersonalInfoEdit extends React.Component {
             id='description-input' 
             rows='5' cols='90' 
             onChange={this.props.handleDescriptionChange}
-            value={description}
+            value={(this.props.description) ? this.props.description : description}
           ></textarea>
         </div>
         <EditForm hideEditForm={this.props.hideEditForm}/>
