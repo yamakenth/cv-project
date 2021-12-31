@@ -1,4 +1,5 @@
 import React from 'react';
+import AddButton from './AddButton';
 import DeleteButton from './DeleteButton';
 import SubmitButton from './SubmitButton';
 
@@ -82,6 +83,7 @@ export default class WorkExpEdit extends React.Component {
             </div>
           );
         })}
+        <AddButton />
         <SubmitButton 
           hideEditForm={this.props.hideEditForm} 
           handleSubmit={this.props.handleSubmit}
