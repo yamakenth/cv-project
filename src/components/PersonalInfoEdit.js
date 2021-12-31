@@ -1,5 +1,5 @@
 import React from 'react';
-import EditForm from './SubmitButton';
+import SubmitButton from './SubmitButton';
 
 class PersonalInfoEdit extends React.Component {
   render() {
@@ -86,7 +86,10 @@ class PersonalInfoEdit extends React.Component {
             value={(this.props.description) ? this.props.description : description}
           ></textarea>
         </div>
-        <EditForm hideEditForm={this.props.hideEditForm}/>
+        <SubmitButton 
+          hideEditForm={this.props.hideEditForm} 
+          handleSubmit={this.props.handleSubmit}
+        />
       </form>
     );
   }
