@@ -39,7 +39,7 @@ class PersonalInfo extends React.Component {
 
   showEditForm = () => {
     this.setState({
-      editFormStyle: { display: 'block' },
+      editFormStyle: { display: 'flex' },
       displayFormStyle: { display: 'none' }
     });
   }

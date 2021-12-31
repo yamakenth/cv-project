@@ -67,3 +67,12 @@ button:hover {
   transform: scale(1.05);
   cursor: pointer;
 }
+
+textarea {
+  resize: none;
+  padding: 2px 6px;
+}
+
+input {
+  padding: 0 4px;
+}

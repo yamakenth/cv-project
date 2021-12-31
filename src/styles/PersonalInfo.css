@@ -3,7 +3,6 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  font-size: 24px;
 }
 
 .contacts {
@@ -12,19 +11,39 @@
   align-items: center;
   gap: 6px;
   margin-bottom: 18px;
-  font-size: 16px;
-}
-
-.description {
-  font-size: 16px;
 }
 
 #pipe {
   font-weight: 900;
 }
 
-input, 
-textarea {
-  border: none;
-  resize: none;
+.personal-info.edit {
+  border: 1px solid #000;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.name-input {
+  display: flex;
+  gap: 20px;
+}
+
+.contact-info {
+  display: flex;
+  gap: 20px;
+}
+
+.link {
+  display: flex;
+  gap: 20px;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
 }

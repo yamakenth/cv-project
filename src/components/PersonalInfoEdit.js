@@ -6,28 +6,46 @@ class PersonalInfoEdit extends React.Component {
     const { fname, lname, location, email, phoneNumber, link, description } = this.props.data;
 
     return(
-      <form className='personal-info display' style={this.props.editFormStyle}>
-        <div className='name'>
-          <input placeholder={fname}></input>
-          <input placeholder={lname}></input>
+      <form className='personal-info edit' style={this.props.editFormStyle}>
+        <h2>Personal Information</h2>
+        <div className='name-input'>
+          <label htmlFor="fname-input">
+            First Name:
+            <input type="text" id="fname-input" value={fname}/>
+          </label>
+          <label htmlFor="lname-input">
+            Last Name:
+            <input type="text" id="lname-input" value={lname}/>
+          </label>
         </div>
-        <div className='contacts'>
-          <input placeholder={location}></input>
-          <p id='pipe'>||</p>
-          <input placeholder={email}></input>
-          <p id='pipe'>||</p>
-          <input placeholder={phoneNumber}></input>
-          <p id='pipe'>||</p>
-          <div >
-            <a href={link.href} target='_blank' rel='noreferrer'>
-              <p>
-                <span>[</span><input placeholder={link.text}></input><span>]</span><br></br>
-                <span>(</span><input placeholder={link.href}></input><span>)</span>
-              </p>
-            </a>
-          </div>
-        </div> 
-        <textarea className='description' rows='5' cols='86' placeholder={description}></textarea>
+        <div className='contact-info'>
+          <label htmlFor="location-input">
+            Location:
+            <input type="text" id="location-input" value={location}/>
+          </label>
+          <label htmlFor="email-input">
+            Email:
+            <input type="text" id="email-input" value={email}/>
+          </label>
+          <label htmlFor="phone-number-input">
+            Phone Number:
+            <input type="text" id="phone-number-input" value={phoneNumber}/>
+          </label>
+        </div>
+        <div className='link'>
+          <label htmlFor="link-text-input">
+            Link Display Text:
+            <input type="text" id="link-text-input" value={link.text}/>
+          </label>
+          <label htmlFor="link-href-input">
+            Link Hyperlink:
+            <input type="text" id="link-href-input" value={link.href}/>
+          </label>
+        </div>
+        <div className='description'>
+          <label htmlFor="description-input">Description:</label>
+          <textarea id='description-input' rows='5' cols='90' value={description}></textarea>
+        </div>
         <EditForm hideEditForm={this.props.hideEditForm}/>
       </form>
     );
