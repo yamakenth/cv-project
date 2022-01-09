@@ -5,16 +5,20 @@ import PersonalInfoEdit from './PersonalInfoEdit';
 
 export default function PersonalInfo() {
   const [editBtnStyle, setEditBtnStyle] = useState({ display: 'none' });
-  const showEditBtn = () => setEditBtnStyle({ display: 'block' });
-  const hideEditBtn = () => setEditBtnStyle({ display: 'none' });
+  function showEditBtn() {
+    setEditBtnStyle({ display: 'block' });
+  }
+  function hideEditBtn() {
+    setEditBtnStyle({ display: 'none' });
+  }
 
   const [editFormStyle, setEditFormStyle] = useState({ display: 'none' });
   const [displayFormStyle, setDisplayFormStyle] = useState({ display: 'block' });
-  const showEditForm = () => {
+  function showEditForm() {
     setEditFormStyle({ display: 'flex' });
     setDisplayFormStyle({ display: 'none' });
   }
-  const hideEditForm = () => {
+  function hideEditForm() {
     setEditFormStyle({ display: 'none' });
     setDisplayFormStyle({ display: 'block' });
   }
