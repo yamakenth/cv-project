@@ -1,7 +1,7 @@
 import React from 'react';
-import AddButton from './AddButton';
-import DeleteButton from './DeleteButton';
-import SubmitButton from './SubmitButton';
+import AddButton from './buttons/AddButton';
+import DeleteButton from './buttons/DeleteButton';
+import SubmitButton from './buttons/SubmitButton';
 
 export default class EducationEdit extends React.Component {
   render() {

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/SubmitButton.css';
+import '../../styles/SubmitButton.css';
 
 export default class EditForm extends React.Component {
   render() {

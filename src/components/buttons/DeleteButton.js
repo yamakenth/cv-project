@@ -1,6 +1,6 @@
 import React from 'react';
-import '../styles/DeleteButton.css';
-import closeButton from '../img/close.png';
+import '../../styles/DeleteButton.css';
+import closeButton from '../../img/close.png';
 
 export default class DeleteButton extends React.Component {
   render() {

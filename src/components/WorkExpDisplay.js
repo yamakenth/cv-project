@@ -1,5 +1,5 @@
 import React from 'react';
-import EditButton from './EditButton';
+import EditButton from './buttons/EditButton';
 
 export default class WorkExpDisplay extends React.Component {
   render() {

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/EditButton.css';
+import '../../styles/EditButton.css';
 
 export default class EditButton extends React.Component {
   render() {
