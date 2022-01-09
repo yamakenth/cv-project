@@ -1,38 +1,36 @@
 import React from 'react';
 import EditButton from './EditButton';
 
-export default class PersonalInfoDisplay extends React.Component {
-  render() {
-    return(
-      <div 
-        className='personal-info display'
-        onMouseEnter={this.props.showEditBtn}
-        onMouseLeave={this.props.hideEditBtn}
-        style={this.props.displayFormStyle}
-      >
-        <EditButton 
-          editBtnStyle={this.props.editBtnStyle} 
-          showEditForm={this.props.showEditForm}
-        />
-        <div className='name'>
-          <h1>{this.props.fname}</h1>
-          <h1>{this.props.lname}</h1>
-        </div>
-        <div className='contacts'>
-          <p>{this.props.location}</p>
-          <p id='pipe'>||</p>
-          <p>{this.props.email}</p>
-          <p id='pipe'>||</p>
-          <p>{this.props.phoneNumber}</p>
-          <p id='pipe'>||</p>
-          <p>
-            <a href= {this.props.linkHref} target='_blank' rel='noreferrer'>
-              {this.props.linkText}
-            </a>
-          </p>
-        </div>
-        <div className='description'>{this.props.description}</div>
+export default function PersonalInfoDisplay(props) {
+  return(
+    <div 
+      className='personal-info display'
+      onMouseEnter={props.showEditBtn}
+      onMouseLeave={props.hideEditBtn}
+      style={props.displayFormStyle}
+    >
+      <EditButton 
+        editBtnStyle={props.editBtnStyle} 
+        showEditForm={props.showEditForm}
+      />
+      <div className='name'>
+        <h1>{props.fname}</h1>
+        <h1>{props.lname}</h1>
       </div>
-    );
-  }
+      <div className='contacts'>
+        <p>{props.location}</p>
+        <p id='pipe'>||</p>
+        <p>{props.email}</p>
+        <p id='pipe'>||</p>
+        <p>{props.phoneNumber}</p>
+        <p id='pipe'>||</p>
+        <p>
+          <a href= {props.linkHref} target='_blank' rel='noreferrer'>
+            {props.linkText}
+          </a>
+        </p>
+      </div>
+      <div className='description'>{props.description}</div>
+    </div>
+  );
 }
