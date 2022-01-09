@@ -63,7 +63,7 @@ export default class PersonalInfoEdit extends React.Component {
               type="text" 
               id="link-text-input" 
               onChange={this.props.handleLinkTextChange}
-              value={this.props.link.text}
+              value={this.props.linkText}
             />
           </label>
           <label htmlFor="link-href-input">
@@ -72,7 +72,7 @@ export default class PersonalInfoEdit extends React.Component {
               type="text" 
               id="link-href-input" 
               onChange={this.props.handleLinkHrefChange}
-              value={this.props.link.href}
+              value={this.props.linkHref}
             />
           </label>
         </div>

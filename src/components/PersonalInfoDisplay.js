@@ -26,8 +26,8 @@ export default class PersonalInfoDisplay extends React.Component {
           <p>{this.props.phoneNumber}</p>
           <p id='pipe'>||</p>
           <p>
-            <a href= {this.props.link.href} target='_blank' rel='noreferrer'>
-              {this.props.link.text}
+            <a href= {this.props.linkHref} target='_blank' rel='noreferrer'>
+              {this.props.linkText}
             </a>
           </p>
         </div>
