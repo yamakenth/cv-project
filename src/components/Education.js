@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../styles/Education.css';
 import uniqid from 'uniqid';
 import EducationDisplay from './EducationDisplay';
 import EducationEdit from './EducationEdit';
