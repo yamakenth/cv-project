@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Data from './data/data.json';
 import Education from './components/Education';
 import PersonalInfo from './components/PersonalInfo';
@@ -8,9 +8,22 @@ import './styles/App.css';
 export default function App() {
   return (
     <div className='resume-body'>
-      <PersonalInfo data={Data.personalInfo} />
-      <WorkExp data={Data.workExp} />
-      <Education data={Data.education} />
+      <PersonalInfo data={Data.personalInfo} useFormInput={useFormInput} />
+      <WorkExp data={Data.workExp} useFormInput={useFormInput} />
+      <Education data={Data.education} useFormInput={useFormInput} />
     </div>
   )
+}
+
+// handle input on edit form
+function useFormInput(initialValue) {
+  const [value, setValue] = useState(initialValue);
+  function handleChange(e) {
+    setValue(e.target.value);
+  }
+
+  return {
+    value,
+    onChange: handleChange
+  }
 }

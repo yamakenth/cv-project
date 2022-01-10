@@ -23,12 +23,12 @@ export default function Education(props) {
     setDisplayFormStyle({ display: 'block' });
   }
   
-  const school = useFormInput('');
-  const location = useFormInput('');
-  const major = useFormInput('');
-  const date = useFormInput('');
-  const desc_1 = useFormInput('');
-  const desc_2 = useFormInput('');
+  const school = props.useFormInput('');
+  const location = props.useFormInput('');
+  const major = props.useFormInput('');
+  const date = props.useFormInput('');
+  const desc_1 = props.useFormInput('');
+  const desc_2 = props.useFormInput('');
 
   const [schools, setSchools] = useState(props.data);
   function handleSchoolChange(e, element) {
@@ -103,17 +103,4 @@ export default function Education(props) {
       />
     </div>
   );
-}
-
-function useFormInput(initialValue) {
-  const [value, setValue] = useState(initialValue);
-
-  function handleChange(e) {
-    setValue(e.target.value);
-  }
-
-  return {
-    value,
-    onChange: handleChange
-  }
 }

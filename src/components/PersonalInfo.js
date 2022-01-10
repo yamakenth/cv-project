@@ -23,14 +23,14 @@ export default function PersonalInfo(props) {
     setDisplayFormStyle({ display: 'block' });
   }
 
-  const fname = useFormInput(props.data.fname);
-  const lname = useFormInput(props.data.lname);
-  const location = useFormInput(props.data.location);
-  const email = useFormInput(props.data.email);
-  const phoneNumber = useFormInput(props.data.phoneNumber);
-  const linkHref = useFormInput(props.data.linkHref);
-  const linkText = useFormInput(props.data.linkText);
-  const description = useFormInput(props.data.description);
+  const fname = props.useFormInput(props.data.fname);
+  const lname = props.useFormInput(props.data.lname);
+  const location = props.useFormInput(props.data.location);
+  const email = props.useFormInput(props.data.email);
+  const phoneNumber = props.useFormInput(props.data.phoneNumber);
+  const linkHref = props.useFormInput(props.data.linkHref);
+  const linkText = props.useFormInput(props.data.linkText);
+  const description = props.useFormInput(props.data.description);
 
   return (
     <div className='personal-info section'>
@@ -73,17 +73,4 @@ export default function PersonalInfo(props) {
       />
     </div>
   )
-}
-
-function useFormInput(initialValue) {
-  const [value, setValue] = useState(initialValue);
-
-  function handleChange(e) {
-    setValue(e.target.value);
-  }
-
-  return {
-    value,
-    onChange: handleChange
-  }
 }

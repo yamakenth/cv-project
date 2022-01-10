@@ -24,13 +24,13 @@ export default function WorkExp(props) {
     setDisplayFormStyle({ display: 'block' });
   }
 
-  const company = useFormInput('');
-  const location = useFormInput('');
-  const position = useFormInput('');
-  const date = useFormInput('');
-  const desc_1 = useFormInput('');
-  const desc_2 = useFormInput('');
-  const desc_3 = useFormInput('');
+  const company = props.useFormInput('');
+  const location = props.useFormInput('');
+  const position = props.useFormInput('');
+  const date = props.useFormInput('');
+  const desc_1 = props.useFormInput('');
+  const desc_2 = props.useFormInput('');
+  const desc_3 = props.useFormInput('');
 
   const [jobs, setJobs] = useState(props.data);
   function handleCompanyChange(e, element) {
@@ -112,17 +112,4 @@ export default function WorkExp(props) {
       />
     </div>
   )
-}
-
-function useFormInput(initialValue) {
-  const [value, setValue] = useState(initialValue);
-
-  function handleChange(e) {
-    setValue(e.target.value);
-  }
-
-  return {
-    value,
-    onChange: handleChange
-  }
 }
