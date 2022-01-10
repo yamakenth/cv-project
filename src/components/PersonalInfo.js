@@ -1,28 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../styles/PersonalInfo.css';
 import PersonalInfoDisplay from './PersonalInfoDisplay';
 import PersonalInfoEdit from './PersonalInfoEdit';
 
 export default function PersonalInfo(props) {
-  const [editBtnStyle, setEditBtnStyle] = useState({ display: 'none' });
-  function showEditBtn() {
-    setEditBtnStyle({ display: 'block' });
-  }
-  function hideEditBtn() {
-    setEditBtnStyle({ display: 'none' });
-  }
-
-  const [editFormStyle, setEditFormStyle] = useState({ display: 'none' });
-  const [displayFormStyle, setDisplayFormStyle] = useState({ display: 'block' });
-  function showEditForm() {
-    setEditFormStyle({ display: 'flex' });
-    setDisplayFormStyle({ display: 'none' });
-  }
-  function hideEditForm() {
-    setEditFormStyle({ display: 'none' });
-    setDisplayFormStyle({ display: 'block' });
-  }
-
   const fname = props.useFormInput(props.data.fname);
   const lname = props.useFormInput(props.data.lname);
   const location = props.useFormInput(props.data.location);
@@ -35,8 +16,8 @@ export default function PersonalInfo(props) {
   return (
     <div className='personal-info section'>
       <PersonalInfoDisplay 
-        editBtnStyle={editBtnStyle}
-        displayFormStyle={displayFormStyle}
+        editBtnStyle={props.editBtnStyle}
+        displayFormStyle={props.displayFormStyle}
         fname={fname.value}
         lname={lname.value}
         location={location.value}
@@ -46,12 +27,12 @@ export default function PersonalInfo(props) {
         linkText={linkText.value}
         description={description.value}
 
-        showEditBtn={showEditBtn}
-        hideEditBtn={hideEditBtn}
-        showEditForm={showEditForm}
+        showEditBtn={props.showEditBtn}
+        hideEditBtn={props.hideEditBtn}
+        showEditForm={props.showEditForm}
       />
       <PersonalInfoEdit 
-        editFormStyle={editFormStyle}
+        editFormStyle={props.editFormStyle}
         fname={fname.value}
         lname={lname.value}
         location={location.value}
@@ -61,7 +42,7 @@ export default function PersonalInfo(props) {
         linkText={linkText.value}
         description={description.value}
         
-        hideEditForm={hideEditForm}
+        hideEditForm={props.hideEditForm}
         handleFNameChange={fname.onChange}
         handleLNameChange={lname.onChange}
         handleLocationChange={location.onChange}
