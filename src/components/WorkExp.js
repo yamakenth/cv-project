@@ -6,6 +6,7 @@ import WorkExpEdit from './WorkExpEdit';
 
 export default function WorkExp(props) {
   const editBtn = props.usePopupButton();
+  const editForm = props.useInformationDisplay();
 
   const company = props.useFormInput('');
   const location = props.useFormInput('');
@@ -71,16 +72,16 @@ export default function WorkExp(props) {
     <div className='work-experience section'>
       <WorkExpDisplay 
         editBtn={editBtn}
-        displayFormStyle={props.displayFormStyle}
+        displayFormStyle={editForm.displayFormStyle}
         jobs={jobs}
         
-        showEditForm={props.showEditForm}
+        showEditForm={editForm.showEditForm}
       />
       <WorkExpEdit
-        editFormStyle={props.editFormStyle}
+        editFormStyle={editForm.editFormStyle}
         jobs={jobs}
 
-        hideEditForm={props.hideEditForm}
+        hideEditForm={editForm.hideEditForm}
         handleCompanyChange={handleCompanyChange}
         handleLocationChange={handleLocationChange}
         handlePositionChange={handlePositionChange}

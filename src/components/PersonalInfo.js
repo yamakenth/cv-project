@@ -5,6 +5,7 @@ import PersonalInfoEdit from './PersonalInfoEdit';
 
 export default function PersonalInfo(props) {
   const editBtn = props.usePopupButton();
+  const editForm = props.useInformationDisplay();
   
   const fname = props.useFormInput(props.data.fname);
   const lname = props.useFormInput(props.data.lname);
@@ -19,7 +20,7 @@ export default function PersonalInfo(props) {
     <div className='personal-info section'>
       <PersonalInfoDisplay 
         editBtn={editBtn}
-        displayFormStyle={props.displayFormStyle}
+        displayFormStyle={editForm.displayFormStyle}
         fname={fname.value}
         lname={lname.value}
         location={location.value}
@@ -29,10 +30,10 @@ export default function PersonalInfo(props) {
         linkText={linkText.value}
         description={description.value}
 
-        showEditForm={props.showEditForm}
+        showEditForm={editForm.showEditForm}
       />
       <PersonalInfoEdit 
-        editFormStyle={props.editFormStyle}
+        editFormStyle={editForm.editFormStyle}
         fname={fname.value}
         lname={lname.value}
         location={location.value}
@@ -42,7 +43,7 @@ export default function PersonalInfo(props) {
         linkText={linkText.value}
         description={description.value}
         
-        hideEditForm={props.hideEditForm}
+        hideEditForm={editForm.hideEditForm}
         handleFNameChange={fname.onChange}
         handleLNameChange={lname.onChange}
         handleLocationChange={location.onChange}

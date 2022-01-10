@@ -5,17 +5,7 @@ import EducationEdit from './EducationEdit';
 
 export default function Education(props) {
   const editBtn = props.usePopupButton();
-
-  const [editFormStyle, setEditFormStyle] = useState({ display: 'none' });
-  const [displayFormStyle, setDisplayFormStyle] = useState({ display: 'block' });
-  function showEditForm() {
-    setEditFormStyle({ display: 'flex' });
-    setDisplayFormStyle({ display: 'none' });
-  }
-  function hideEditForm() {
-    setEditFormStyle({ display: 'none' });
-    setDisplayFormStyle({ display: 'block' });
-  }
+  const editForm = props.useInformationDisplay();
   
   const school = props.useFormInput('');
   const location = props.useFormInput('');
@@ -74,16 +64,16 @@ export default function Education(props) {
     <div className='education section'>
       <EducationDisplay 
         editBtn={editBtn}
-        displayFormStyle={displayFormStyle}
+        displayFormStyle={editForm.displayFormStyle}
         schools={schools}
 
-        showEditForm={showEditForm}
+        showEditForm={editForm.showEditForm}
       />
       <EducationEdit 
-        editFormStyle={editFormStyle}
+        editFormStyle={editForm.editFormStyle}
         schools={schools}
 
-        hideEditForm={hideEditForm}
+        hideEditForm={editForm.hideEditForm}
         handleSchoolChange={handleSchoolChange}
         handleLocationChange={handleLocationChange}
         handleMajorChange={handleMajorChange}

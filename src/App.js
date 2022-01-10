@@ -5,50 +5,26 @@ import PersonalInfo from './components/PersonalInfo';
 import WorkExp from './components/WorkExp';
 import './styles/App.css';
 
-export default function App() {
-  // const [editBtnStyle, setEditBtnStyle] = useState({ display: 'none' });
-  // function showEditBtn() {
-  //   setEditBtnStyle({ display: 'block' });
-  // }
-  // function hideEditBtn() {
-  //   setEditBtnStyle({ display: 'none' });
-  // }
-
-  const [editFormStyle, setEditFormStyle] = useState({ display: 'none' });
-  const [displayFormStyle, setDisplayFormStyle] = useState({ display: 'block' });
-  function showEditForm() {
-    setEditFormStyle({ display: 'flex' });
-    setDisplayFormStyle({ display: 'none' });
-  }
-  function hideEditForm() {
-    setEditFormStyle({ display: 'none' });
-    setDisplayFormStyle({ display: 'block' });
-  }
-  
+export default function App() {  
   return (
     <div className='resume-body'>
       <PersonalInfo 
         data={Data.personalInfo} 
         useFormInput={useFormInput} 
         usePopupButton={usePopupButton}
-        editFormStyle={editFormStyle}
-        displayFormStyle={displayFormStyle}
-        showEditForm={showEditForm}
-        hideEditForm={hideEditForm}
-      />
+        useInformationDisplay={useInformationDisplay}
+        />
       <WorkExp 
         data={Data.workExp} 
         useFormInput={useFormInput} 
         usePopupButton={usePopupButton}
-        editFormStyle={editFormStyle}
-        displayFormStyle={displayFormStyle}
-        showEditForm={showEditForm}
-        hideEditForm={hideEditForm}
+        useInformationDisplay={useInformationDisplay}
         />
       <Education 
         data={Data.education} 
         useFormInput={useFormInput}
         usePopupButton={usePopupButton}
+        useInformationDisplay={useInformationDisplay}
       />
     </div>
   )
@@ -81,5 +57,26 @@ function usePopupButton() {
     btnStyle, 
     showBtn, 
     hideBtn
+  }
+}
+
+// switch between display and edit form 
+function useInformationDisplay() {
+  const [editFormStyle, setEditFormStyle] = useState({ display: 'none' });
+  const [displayFormStyle, setDisplayFormStyle] = useState({ display: 'block' });
+  function showEditForm() {
+    setEditFormStyle({ display: 'flex' });
+    setDisplayFormStyle({ display: 'none' });
+  }
+  function hideEditForm() {
+    setEditFormStyle({ display: 'none' });
+    setDisplayFormStyle({ display: 'block' });
+  }
+
+  return {
+    editFormStyle,
+    displayFormStyle,
+    showEditForm,
+    hideEditForm
   }
 }
