@@ -1,149 +1,119 @@
-import React from 'react';
+import React, { useState } from 'react';
 import uniqid from 'uniqid';
 import EducationDisplay from './EducationDisplay';
 import EducationEdit from './EducationEdit';
 
-export default class Education extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      editBtnStyle: { display: 'none' },
-      editFormStyle: { display: 'none' },
-      displayFormStyle: { display: 'block' },
-      
+export default function Education(props) {
+  const [editBtnStyle, setEditBtnStyle] = useState({ display: 'none' });
+  function showEditBtn() {
+    setEditBtnStyle({ display: 'block' });
+  }
+  function hideEditBtn() {
+    setEditBtnStyle({ display: 'none' });
+  }
+
+  const [editFormStyle, setEditFormStyle] = useState({ display: 'none' });
+  const [displayFormStyle, setDisplayFormStyle] = useState({ display: 'block' });
+  function showEditForm() {
+    setEditFormStyle({ display: 'flex' });
+    setDisplayFormStyle({ display: 'none' });
+  }
+  function hideEditForm() {
+    setEditFormStyle({ display: 'none' });
+    setDisplayFormStyle({ display: 'block' });
+  }
+  
+  const school = useFormInput('');
+  const location = useFormInput('');
+  const major = useFormInput('');
+  const date = useFormInput('');
+  const desc_1 = useFormInput('');
+  const desc_2 = useFormInput('');
+
+  const [schools, setSchools] = useState(props.data);
+  function handleSchoolChange(e, element) {
+    setSchools(schools.map((item) => 
+      (item.id === element.id) ? { ...item, school: e.target.value } : item 
+    ));
+  }
+  function handleLocationChange(e, element) {
+    setSchools(schools.map((item) => 
+      (item.id === element.id) ? { ...item, location: e.target.value } : item 
+    ));
+  }
+  function handleMajorChange(e, element) {
+    setSchools(schools.map((item) => 
+      (item.id === element.id) ? { ...item, major: e.target.value } : item 
+    ));
+  }
+  function handleDateChange(e, element) {
+    setSchools(schools.map((item) => 
+      (item.id === element.id) ? { ...item, date: e.target.value } : item 
+    ));
+  }
+  function handleDesc1Change(e, element) {
+    setSchools(schools.map((item) => 
+      (item.id === element.id) ? { ...item, desc_1: e.target.value } : item 
+    ));
+  }
+  function handleDesc2Change(e, element) {
+    setSchools(schools.map((item) => 
+      (item.id === element.id) ? { ...item, desc_2: e.target.value } : item 
+    ));
+  }
+  function handleDelete(element) {
+    setSchools(schools.filter(item => item.id !== element.id));
+  }
+  function handleAdd() {
+    setSchools(schools.concat({
       id: uniqid(),
-      school: '',
-      location: '',
-      major: '',
-      date: '',
-      desc_1: '',
-      desc_2: '',
-      
-      schools: props.data
-    }
+      school: school.value,
+      location: location.value,
+      major: major.value,
+      date: date.value,
+      desc_1: desc_1.value,
+      desc_2: desc_2.value
+    }));
   }
 
-  showEditBtn = () => {
-    this.setState({
-      editBtnStyle: { display: 'block' }
-    });
-  }
-  
-  hideEditBtn = () => {
-    this.setState({
-      editBtnStyle: { display: 'none' }
-    });
-  }
+  return (
+    <div className='education section'>
+      <EducationDisplay 
+        editBtnStyle={editBtnStyle}
+        displayFormStyle={displayFormStyle}
+        schools={schools}
 
-  showEditForm = () => {
-    this.setState({
-      editFormStyle: { display: 'flex' },
-      displayFormStyle: { display: 'none' },
-    });
-  }
-  
-  hideEditForm = () => {
-    this.setState({
-      editFormStyle: { display: 'none' },
-      displayFormStyle: { display: 'block' }
-    });
-  }
+        showEditBtn={showEditBtn}
+        hideEditBtn={hideEditBtn}
+        showEditForm={showEditForm}
+      />
+      <EducationEdit 
+        editFormStyle={editFormStyle}
+        schools={schools}
 
-  handleSchoolChange = (e, element) => {
-    this.setState({
-      schools: this.state.schools.map((item) => 
-        (item.id === element.id) ? { ...item, school: e.target.value } : item
-      )
-    });
-  }
+        hideEditForm={hideEditForm}
+        handleSchoolChange={handleSchoolChange}
+        handleLocationChange={handleLocationChange}
+        handleMajorChange={handleMajorChange}
+        handleDateChange={handleDateChange}
+        handleDesc1Change={handleDesc1Change}
+        handleDesc2Change={handleDesc2Change}
+        handleDelete={handleDelete}
+        handleAdd={handleAdd}
+      />
+    </div>
+  );
+}
 
-  handleLocationChange = (e, element) => {
-    this.setState({
-      schools: this.state.schools.map((item) => 
-        (item.id === element.id) ? { ...item, location: e.target.value } : item
-      )
-    });
+function useFormInput(initialValue) {
+  const [value, setValue] = useState(initialValue);
+
+  function handleChange(e) {
+    setValue(e.target.value);
   }
 
-  handleMajorChange = (e, element) => {
-    this.setState({
-      schools: this.state.schools.map((item) => 
-        (item.id === element.id) ? { ...item, major: e.target.value } : item
-      )
-    });
-  }
-
-  handleDateChange = (e, element) => {
-    this.setState({
-      schools: this.state.schools.map((item) => 
-        (item.id === element.id) ? { ...item, date: e.target.value } : item
-      )
-    });
-  }
-
-  handleDesc1Change = (e, element) => {
-    this.setState({
-      schools: this.state.schools.map((item) => 
-        (item.id === element.id) ? { ...item, desc_1: e.target.value } : item
-      )
-    });
-  }
-
-  handleDesc2Change = (e, element) => {
-    this.setState({
-      schools: this.state.schools.map((item) => 
-        (item.id === element.id) ? { ...item, desc_2: e.target.value } : item
-      )
-    });
-  }
-
-  handleDelete = (element) => {
-    this.setState({
-      schools: this.state.schools.filter(item => item.id !== element.id)
-    });
-  }
-
-  handleAdd = () => {
-    this.setState({
-      schools: this.state.schools.concat({
-        id: this.state.id,
-        school: this.state.school,
-        location: this.state.location,
-        major: this.state.major,
-        date: this.state.date,
-        desc_1: this.state.desc_1,
-        desc_2: this.state.desc_2,
-      })
-    });
-  }
-
-  render() {
-    return(
-      <div className='education section'>
-        <EducationDisplay 
-          editBtnStyle={this.state.editBtnStyle}
-          displayFormStyle={this.state.displayFormStyle}
-          schools={this.state.schools}
-
-          showEditBtn={this.showEditBtn}
-          hideEditBtn={this.hideEditBtn}
-          showEditForm={this.showEditForm}
-        />
-        <EducationEdit 
-          editFormStyle={this.state.editFormStyle}
-          schools={this.state.schools}
-
-          hideEditForm={this.hideEditForm}
-          handleSchoolChange={this.handleSchoolChange}
-          handleLocationChange={this.handleLocationChange}
-          handleMajorChange={this.handleMajorChange}
-          handleDateChange={this.handleDateChange}
-          handleDesc1Change={this.handleDesc1Change}
-          handleDesc2Change={this.handleDesc2Change}
-          handleDelete={this.handleDelete}
-          handleAdd={this.handleAdd}
-        />
-      </div>
-    );
+  return {
+    value,
+    onChange: handleChange
   }
 }
