@@ -1,10 +1,8 @@
 import React from 'react';
 import '../../styles/SubmitButton.css';
 
-export default class EditForm extends React.Component {
-  render() {
-    return (
-      <button type='button' id='submit' onClick={this.props.hideEditForm}>Confirm</button>
-    );
-  }
+export default function EditForm(props) {
+  return (
+    <button type='button' id='submit' onClick={props.hideEditForm}>Confirm</button>
+  );
 }
