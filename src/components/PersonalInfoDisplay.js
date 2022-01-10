@@ -5,12 +5,12 @@ export default function PersonalInfoDisplay(props) {
   return(
     <div 
       className='personal-info display'
-      onMouseEnter={props.showEditBtn}
-      onMouseLeave={props.hideEditBtn}
+      onMouseEnter={props.editBtn.showBtn}
+      onMouseLeave={props.editBtn.hideBtn}
       style={props.displayFormStyle}
     >
       <EditButton 
-        editBtnStyle={props.editBtnStyle} 
+        editBtnStyle={props.editBtn.btnStyle} 
         showEditForm={props.showEditForm}
       />
       <div className='name'>

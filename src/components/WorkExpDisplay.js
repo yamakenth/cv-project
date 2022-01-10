@@ -5,11 +5,11 @@ export default function WorkExpDisplay(props) {
   return (
     <div 
       className='work-experience display' 
-      onMouseEnter={props.showEditBtn}
-      onMouseLeave={props.hideEditBtn}
+      onMouseEnter={props.editBtn.showBtn}
+      onMouseLeave={props.editBtn.hideBtn}
       style={props.displayFormStyle}
     >
-      <EditButton editBtnStyle={props.editBtnStyle} showEditForm={props.showEditForm}/>
+      <EditButton editBtnStyle={props.editBtn.btnStyle} showEditForm={props.showEditForm}/>
       <h3>WORK EXPERIENCE</h3>
       {props.jobs.map((job) => {
         return (

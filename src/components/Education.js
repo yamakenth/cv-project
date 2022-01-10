@@ -4,13 +4,7 @@ import EducationDisplay from './EducationDisplay';
 import EducationEdit from './EducationEdit';
 
 export default function Education(props) {
-  const [editBtnStyle, setEditBtnStyle] = useState({ display: 'none' });
-  function showEditBtn() {
-    setEditBtnStyle({ display: 'block' });
-  }
-  function hideEditBtn() {
-    setEditBtnStyle({ display: 'none' });
-  }
+  const editBtn = props.usePopupButton();
 
   const [editFormStyle, setEditFormStyle] = useState({ display: 'none' });
   const [displayFormStyle, setDisplayFormStyle] = useState({ display: 'block' });
@@ -79,12 +73,10 @@ export default function Education(props) {
   return (
     <div className='education section'>
       <EducationDisplay 
-        editBtnStyle={editBtnStyle}
+        editBtn={editBtn}
         displayFormStyle={displayFormStyle}
         schools={schools}
 
-        showEditBtn={showEditBtn}
-        hideEditBtn={hideEditBtn}
         showEditForm={showEditForm}
       />
       <EducationEdit 

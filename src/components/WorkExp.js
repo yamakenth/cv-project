@@ -5,24 +5,7 @@ import WorkExpDisplay from './WorkExpDisplay';
 import WorkExpEdit from './WorkExpEdit';
 
 export default function WorkExp(props) {
-  const [editBtnStyle, setEditBtnStyle] = useState({ display: 'none' });
-  function showEditBtn() {
-    setEditBtnStyle({ display: 'block' });
-  }
-  function hideEditBtn() {
-    setEditBtnStyle({ display: 'none' });
-  }
-
-  const [editFormStyle, setEditFormStyle] = useState({ display: 'none' });
-  const [displayFormStyle, setDisplayFormStyle] = useState({ display: 'block' });
-  function showEditForm() {
-    setEditFormStyle({ display: 'flex' });
-    setDisplayFormStyle({ display: 'none' });
-  }
-  function hideEditForm() {
-    setEditFormStyle({ display: 'none' });
-    setDisplayFormStyle({ display: 'block' });
-  }
+  const editBtn = props.usePopupButton();
 
   const company = props.useFormInput('');
   const location = props.useFormInput('');
@@ -87,19 +70,17 @@ export default function WorkExp(props) {
   return (
     <div className='work-experience section'>
       <WorkExpDisplay 
-        editBtnStyle={editBtnStyle}
-        displayFormStyle={displayFormStyle}
+        editBtn={editBtn}
+        displayFormStyle={props.displayFormStyle}
         jobs={jobs}
         
-        showEditBtn={showEditBtn}
-        hideEditBtn={hideEditBtn}
-        showEditForm={showEditForm}
+        showEditForm={props.showEditForm}
       />
       <WorkExpEdit
-        editFormStyle={editFormStyle}
+        editFormStyle={props.editFormStyle}
         jobs={jobs}
 
-        hideEditForm={hideEditForm}
+        hideEditForm={props.hideEditForm}
         handleCompanyChange={handleCompanyChange}
         handleLocationChange={handleLocationChange}
         handlePositionChange={handlePositionChange}

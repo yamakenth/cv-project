@@ -6,13 +6,13 @@ import WorkExp from './components/WorkExp';
 import './styles/App.css';
 
 export default function App() {
-  const [editBtnStyle, setEditBtnStyle] = useState({ display: 'none' });
-  function showEditBtn() {
-    setEditBtnStyle({ display: 'block' });
-  }
-  function hideEditBtn() {
-    setEditBtnStyle({ display: 'none' });
-  }
+  // const [editBtnStyle, setEditBtnStyle] = useState({ display: 'none' });
+  // function showEditBtn() {
+  //   setEditBtnStyle({ display: 'block' });
+  // }
+  // function hideEditBtn() {
+  //   setEditBtnStyle({ display: 'none' });
+  // }
 
   const [editFormStyle, setEditFormStyle] = useState({ display: 'none' });
   const [displayFormStyle, setDisplayFormStyle] = useState({ display: 'block' });
@@ -30,9 +30,7 @@ export default function App() {
       <PersonalInfo 
         data={Data.personalInfo} 
         useFormInput={useFormInput} 
-        editBtnStyle={editBtnStyle}
-        showEditBtn={showEditBtn}
-        hideEditBtn={hideEditBtn}
+        usePopupButton={usePopupButton}
         editFormStyle={editFormStyle}
         displayFormStyle={displayFormStyle}
         showEditForm={showEditForm}
@@ -41,10 +39,16 @@ export default function App() {
       <WorkExp 
         data={Data.workExp} 
         useFormInput={useFormInput} 
-      />
+        usePopupButton={usePopupButton}
+        editFormStyle={editFormStyle}
+        displayFormStyle={displayFormStyle}
+        showEditForm={showEditForm}
+        hideEditForm={hideEditForm}
+        />
       <Education 
         data={Data.education} 
-        useFormInput={useFormInput} 
+        useFormInput={useFormInput}
+        usePopupButton={usePopupButton}
       />
     </div>
   )
@@ -60,5 +64,22 @@ function useFormInput(initialValue) {
   return {
     value,
     onChange: handleChange
+  }
+}
+
+// show and hide edit button 
+function usePopupButton() {
+  const [btnStyle, setBtnStyle] = useState({ display: 'none' });
+  function showBtn() {
+    setBtnStyle({ display: 'block' });
+  }
+  function hideBtn() {
+    setBtnStyle({ display: 'none' });
+  }
+
+  return {
+    btnStyle, 
+    showBtn, 
+    hideBtn
   }
 }

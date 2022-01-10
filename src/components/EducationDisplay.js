@@ -5,11 +5,11 @@ export default function EducationDisplay(props) {
   return (
     <div 
       className='education display'
-      onMouseEnter={props.showEditBtn}
-      onMouseLeave={props.hideEditBtn}
+      onMouseEnter={props.editBtn.showBtn}
+      onMouseLeave={props.editBtn.hideBtn}
       style={props.displayFormStyle}
     >
-      <EditButton editBtnStyle={props.editBtnStyle} showEditForm={props.showEditForm}/>
+      <EditButton editBtnStyle={props.editBtn.btnStyle} showEditForm={props.showEditForm}/>
       <h3>EDUCATION</h3>
       {props.schools.map((school) => {
         return (
