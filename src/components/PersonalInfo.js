@@ -3,7 +3,7 @@ import '../styles/PersonalInfo.css';
 import PersonalInfoDisplay from './PersonalInfoDisplay';
 import PersonalInfoEdit from './PersonalInfoEdit';
 
-export default function PersonalInfo() {
+export default function PersonalInfo(props) {
   const [editBtnStyle, setEditBtnStyle] = useState({ display: 'none' });
   function showEditBtn() {
     setEditBtnStyle({ display: 'block' });
@@ -23,23 +23,14 @@ export default function PersonalInfo() {
     setDisplayFormStyle({ display: 'block' });
   }
 
-  const fname = useFormInput('James');
-  const lname = useFormInput('Jones');
-  const location = useFormInput('Seattle, Washington');
-  const email = useFormInput('contactme@gmail.com');
-  const phoneNumber = useFormInput('(123)-567-8910');
-  const linkHref = useFormInput(
-    'https://www.youtube.com/watch?v=UqTTSo1wdIY&ab_channel=F1AudioBook'
-  );
-  const linkText = useFormInput('www.myportfolio.com');
-  const description = useFormInput(
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ' +
-    'ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ' + 
-    'ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in ' + 
-    'reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur ' +
-    'sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est ' +
-    'laborum.'
-  );
+  const fname = useFormInput(props.data.fname);
+  const lname = useFormInput(props.data.lname);
+  const location = useFormInput(props.data.location);
+  const email = useFormInput(props.data.email);
+  const phoneNumber = useFormInput(props.data.phoneNumber);
+  const linkHref = useFormInput(props.data.linkHref);
+  const linkText = useFormInput(props.data.linkText);
+  const description = useFormInput(props.data.description);
 
   return (
     <div className='personal-info section'>

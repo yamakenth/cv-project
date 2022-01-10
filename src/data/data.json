@@ -1,0 +1,64 @@
+{
+  "personalInfo": {
+    "fname": "James",
+    "lname": "Jones",
+    "location": "Seattle, Washington",
+    "email": "contactme@gmail.com",
+    "phoneNumber": "(123)-567-8910",
+    "linkHref": "https://www.youtube.com/watch?v=UqTTSo1wdIY&ab_channel=F1AudioBook",
+    "linkText": "www.myportfolio.com",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  },
+  "workExp": [
+    {
+      "id": "ky8512vs",
+      "company": "E-commerce Company",
+      "location": "Seattle, Washington",
+      "position": "Frontend Engineer",
+      "date": "September 2020 - Decemeber 2021",
+      "desc_1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas tellus rutrum tellus pellentesque. Tincidunt vitae semper quis lectus nulla at volutpat.",
+      "desc_2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pulvinar etiam non quam lacus suspendisse faucibus interdum. Donec et odio pellentesque diam volutpat commodo sed egestas egestas.",
+      "desc_3": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis magna etiam tempor orci eu lobortis elementum nibh. Adipiscing elit ut aliquam purus sit amet luctus."
+    },
+    {
+      "id": "ky8512vy",
+      "company": "Manufacturing Company",
+      "location": "Bothell, Washington",
+      "position": "Backend Engineer",
+      "date": "September 2019 - August 2020",
+      "desc_1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas tellus rutrum tellus pellentesque. Tincidunt vitae semper quis lectus nulla at volutpat.",
+      "desc_2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pulvinar etiam non quam lacus suspendisse faucibus interdum. Donec et odio pellentesque diam volutpat commodo sed egestas egestas.",
+      "desc_3": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis magna etiam tempor orci eu lobortis elementum nibh. Adipiscing elit ut aliquam purus sit amet luctus."
+    },
+    {
+      "id": "ky8512vz",
+      "company": "Banking Company",
+      "location": "Tokyo, Japan",
+      "position": "Software Engineer",
+      "date": "September 2016 - August 2019",
+      "desc_1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas tellus rutrum tellus pellentesque. Tincidunt vitae semper quis lectus nulla at volutpat.",
+      "desc_2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pulvinar etiam non quam lacus suspendisse faucibus interdum. Donec et odio pellentesque diam volutpat commodo sed egestas egestas.",
+      "desc_3": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis magna etiam tempor orci eu lobortis elementum nibh. Adipiscing elit ut aliquam purus sit amet luctus."
+    }
+  ],
+  "education": [
+    {
+      "id": "ky85w62j",
+      "school": "University of Country",
+      "location": "Tokyo, Japan",
+      "major": "B.S. Applied Computational Mathematics",
+      "date": "July 2016",
+      "desc_1": "Major GPA: 3.95/4.00, Cumulative GPA: 3.78/4.00",
+      "desc_2": "Dean's List (8 semesters)"
+    },
+    {
+      "id": "ky85w62k",
+      "school": "University of State, College of Engineering",
+      "location": "Seattle, Washington",
+      "major": "M.S. Industrial & Systems Engineering",
+      "date": "June 2018",
+      "desc_1": "Major GPA: 3.77/4.00, Cumulative GPA: 3.59/4.00",
+      "desc_2": "Dean's List (3 semesters)"
+    }
+  ]
+}
