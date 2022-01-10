@@ -68,7 +68,8 @@ function useInformationDisplay() {
     setEditFormStyle({ display: 'flex' });
     setDisplayFormStyle({ display: 'none' });
   }
-  function hideEditForm() {
+  function hideEditForm(e) {
+    e.preventDefault();
     setEditFormStyle({ display: 'none' });
     setDisplayFormStyle({ display: 'block' });
   }

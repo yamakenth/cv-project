@@ -5,7 +5,11 @@ import SubmitButton from './buttons/SubmitButton';
 
 export default function WorkExpEdit(props) {
   return (
-    <form className='work-experience edit' style={props.editFormStyle}>
+    <form 
+      className='work-experience edit' 
+      style={props.editFormStyle}
+      onSubmit={props.hideEditForm}
+    >
       <h2>Work Experience</h2>
       {props.jobs.map((job) => {
         return (

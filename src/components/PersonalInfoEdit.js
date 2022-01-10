@@ -2,8 +2,12 @@ import React from 'react';
 import SubmitButton from './buttons/SubmitButton';
 
 export default function PersonalInfoEdit(props) {
-  return(
-    <form className='personal-info edit' style={props.editFormStyle}>
+  return (
+    <form 
+      className='personal-info edit' 
+      style={props.editFormStyle}  
+      onSubmit={props.hideEditForm}
+    >
       <h2>Personal Information</h2>
       <div className='name-input'>
         <label htmlFor="fname-input">

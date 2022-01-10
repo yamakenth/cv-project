@@ -5,7 +5,11 @@ import SubmitButton from './buttons/SubmitButton';
 
 export default function EducationEdit(props) {
   return (
-    <form className='education edit' style={props.editFormStyle}>
+    <form 
+      className='education edit' 
+      style={props.editFormStyle}
+      onSubmit={props.hideEditForm}
+    >
       <h2>Education</h2>
       {props.schools.map((school) => {
         return (
