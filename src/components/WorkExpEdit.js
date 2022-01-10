@@ -23,6 +23,7 @@ export default function WorkExpEdit(props) {
                   id="compnay-name-input" 
                   onChange={(e) => props.handleCompanyChange(e, job)} 
                   value={(props.company) ? props.company : job.company}
+                  required
                 />
               </label>
               <label htmlFor="location-input">
@@ -32,6 +33,7 @@ export default function WorkExpEdit(props) {
                   id="location-input" 
                   onChange={(e) => props.handleLocationChange(e, job)}
                   value={(props.location) ? props.location : job.location}
+                  required
                 />
               </label>
             </div>
@@ -43,6 +45,7 @@ export default function WorkExpEdit(props) {
                   id="position-input" 
                   onChange={(e) => props.handlePositionChange(e, job)} 
                   value={(props.position) ? props.position : job.position}
+                  required
                 />
               </label>
               <label htmlFor="date-input">
@@ -52,6 +55,7 @@ export default function WorkExpEdit(props) {
                   id="date-input" 
                   onChange={(e) => props.handleDateChange(e, job)}
                   value={(props.date) ? props.date : job.date}
+                  required
                 />
               </label>
             </div>
@@ -62,6 +66,7 @@ export default function WorkExpEdit(props) {
                 rows='3' cols='90' 
                 onChange={(e) => props.handleDesc1Change(e, job)}
                 value={(props.desc_1) ? props.desc_1 : job.desc_1}
+                required
               ></textarea>
             </div>
             <div className='desc'>
@@ -71,6 +76,7 @@ export default function WorkExpEdit(props) {
                 rows='3' cols='90' 
                 onChange={(e) => props.handleDesc2Change(e, job)}
                 value={(props.desc_2) ? props.desc_2 : job.desc_2}
+                required
               ></textarea>
             </div>
             <div className='desc'>
@@ -80,6 +86,7 @@ export default function WorkExpEdit(props) {
                 rows='3' cols='90' 
                 onChange={(e) => props.handleDesc3Change(e, job)}
                 value={(props.desc_3) ? props.desc_3 : job.desc_3}
+                required
               ></textarea>
             </div>
           </div>

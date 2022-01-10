@@ -27,6 +27,7 @@ export default function PersonalInfoEdit(props) {
             id="lname-input" 
             onChange={props.handleLNameChange}
             value={props.lname}
+            required
           />
         </label>
       </div>
@@ -38,6 +39,7 @@ export default function PersonalInfoEdit(props) {
             id="location-input" 
             onChange={props.handleLocationChange}
             value={props.location}
+            required
           />
         </label>
         <label htmlFor="email-input">
@@ -47,6 +49,7 @@ export default function PersonalInfoEdit(props) {
             id="email-input" 
             onChange={props.handleEmailChange}
             value={props.email}
+            required
           />
         </label>
         <label htmlFor="phone-number-input">
@@ -56,6 +59,7 @@ export default function PersonalInfoEdit(props) {
             id="phone-number-input" 
             onChange={props.handlePhoneNumberChange}
             value={props.phoneNumber}
+            required
           />
         </label>
       </div>
@@ -67,6 +71,7 @@ export default function PersonalInfoEdit(props) {
             id="link-text-input" 
             onChange={props.handleLinkTextChange}
             value={props.linkText}
+            required
           />
         </label>
         <label htmlFor="link-href-input">
@@ -76,6 +81,7 @@ export default function PersonalInfoEdit(props) {
             id="link-href-input" 
             onChange={props.handleLinkHrefChange}
             value={props.linkHref}
+            required
           />
         </label>
       </div>
