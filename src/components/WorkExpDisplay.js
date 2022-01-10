@@ -1,37 +1,35 @@
 import React from 'react';
 import EditButton from './buttons/EditButton';
 
-export default class WorkExpDisplay extends React.Component {
-  render() {
-    return (
-      <div 
-        className='work-experience display' 
-        onMouseEnter={this.props.showEditBtn}
-        onMouseLeave={this.props.hideEditBtn}
-        style={this.props.displayFormStyle}
-      >
-        <EditButton editBtnStyle={this.props.editBtnStyle} showEditForm={this.props.showEditForm}/>
-        <h3>WORK EXPERIENCE</h3>
-        {this.props.jobs.map((job) => {
-          return (
-            <div key={job.id} className='work item'>
-              <div className='row one'>
-                <p>{job.company}</p>
-                <p>{job.location}</p>
-              </div>
-              <div className='row two'>
-                <p>{job.position}</p>
-                <p>{job.date}</p>
-              </div>
-              <ul className='job-description'>
-                <li>{job.desc_1}</li>
-                <li>{job.desc_2}</li>
-                <li>{job.desc_3}</li>
-              </ul>
+export default function WorkExpDisplay(props) {
+  return (
+    <div 
+      className='work-experience display' 
+      onMouseEnter={props.showEditBtn}
+      onMouseLeave={props.hideEditBtn}
+      style={props.displayFormStyle}
+    >
+      <EditButton editBtnStyle={props.editBtnStyle} showEditForm={props.showEditForm}/>
+      <h3>WORK EXPERIENCE</h3>
+      {props.jobs.map((job) => {
+        return (
+          <div key={job.id} className='work item'>
+            <div className='row one'>
+              <p>{job.company}</p>
+              <p>{job.location}</p>
             </div>
-          );
-        })}
-      </div>
-    );
-  }
+            <div className='row two'>
+              <p>{job.position}</p>
+              <p>{job.date}</p>
+            </div>
+            <ul className='job-description'>
+              <li>{job.desc_1}</li>
+              <li>{job.desc_2}</li>
+              <li>{job.desc_3}</li>
+            </ul>
+          </div>
+        );
+      })}
+    </div>
+  )
 }
